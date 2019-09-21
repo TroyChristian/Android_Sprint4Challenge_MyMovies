@@ -5,7 +5,9 @@ import androidx.room.Query
 
 @Dao
 interface MovieDAO{
-    @Query("SELECT * FROM favorite_movies")
-    fun getAllFavoriteMovies()
+    @Query("SELECT title FROM favorite_movies WHERE title like :search ")
+    fun getMovieByName(search:String)
+
+
 
 }
